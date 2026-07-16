@@ -4,13 +4,15 @@ Full-stack async optimization platform demonstrating a production-grade
 **React + FastAPI + Celery + Redis** architecture for long-running compute
 jobs with real-time browser updates via Server-Sent Events.
 
+**While all the Machine Learning, Data Preprocessing, and Mixed Integer Programming in this repo represents my own work, this async-solver-platform was co-authored with Claude ai**
+
 ---
 
 ## Portfolio Note
 
 This is a sanitized portfolio version of a production NFL schedule optimization
 system. The proprietary components (a Gurobi MIP solver, production viewership
-models, and league-confidential scheduling data have been removed. In their
+models, and confidential scheduling data) have been removed. In their
 place, a **mock solver** replays pre-computed solutions from the real system,
 preserving the exact shape of the async pipeline: task dispatch, incumbent
 streaming, and live UI updates all work end-to-end.
@@ -31,12 +33,12 @@ bus, and the REST API - is real production-ready code.
 
 ```mermaid
 flowchart LR
-    Browser["React 18\nTanStack Query\nZustand"] -->|REST POST /runs| API["FastAPI\nSQLAlchemy\nSQLite"]
-    API -->|delay()| Celery["Celery Worker\nmock_solver.py"]
-    Celery -->|publish incumbent| Redis["Redis\npub/sub + broker"]
-    Redis -->|subscribe| SSE["SSE endpoint\n/runs/{id}/stream"]
+    Browser["React 18<br/>TanStack Query<br/>Zustand"] -->|REST POST /runs| API["FastAPI<br/>SQLAlchemy<br/>SQLite"]
+    API -->|dispatch delay| Celery["Celery Worker<br/>mock_solver.py"]
+    Celery -->|publish incumbent| Redis["Redis<br/>pub/sub + broker"]
+    Redis -->|subscribe| SSE["SSE endpoint<br/>/runs/id/stream"]
     SSE -->|EventSource| Browser
-    Celery -->|write Solution rows| DB["SQLite\nnfl.db"]
+    Celery -->|write Solution rows| DB["SQLite<br/>nfl.db"]
     API --- DB
 ```
 
