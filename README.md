@@ -1,4 +1,4 @@
-# Data Science, Machine Learning, and Software Engineering Portfolio
+# Data Science, Machine Learning, Operations Research, and Software Engineering Portfolio
 
 **Seth DeValve, Principle Software Engineer, Accelerait LLC**
 
