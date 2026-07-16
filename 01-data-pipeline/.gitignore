@@ -1,0 +1,13 @@
+# credentials (never commit)
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# data files (NDA protected)
+*.csv
+*.xlsx
+*.xls

@@ -1,0 +1,24 @@
+[project]
+name = "async-solver-platform-api"
+version = "0.1.0"
+description = "Portfolio demo — async optimization platform"
+requires-python = ">=3.11"
+dependencies = [
+    "celery[redis]>=5.3",
+    "fastapi>=0.111",
+    "python-dotenv>=1.0",
+    "redis>=5.0",
+    "sqlalchemy>=2.0",
+    "uvicorn[standard]>=0.29",
+    "pydantic>=2.6",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "httpx>=0.27",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

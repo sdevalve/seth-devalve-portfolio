@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.env.local
+
+# DB (built by scripts/build_portfolio_db.py — committed intentionally)
+# api/nfl.db is tracked
+
+# Unrelated sub-project from react tutorial
+react-tutorial-app/game-hub/
+
+# Claude Code local settings (contain machine-specific paths)
+.claude/
+
+# Runtime logs
+uvicorn.log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

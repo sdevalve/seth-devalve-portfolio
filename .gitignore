@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Node / frontend
+node_modules/
+dist/
+.vite/
+
+# Environments & secrets
+.env
+.env.local
+*.log
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Editor / assistant local config
+.claude/
+.vscode/
+
+# Large binaries that do not belong in a portfolio repo
+# (models/traces/arrays are regenerated locally, not committed)
+*.nc
+*.npz
+*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
