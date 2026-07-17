@@ -16,7 +16,7 @@ from sqlalchemy import create_engine, text
 # Configuration
 # ---------------------------------------------------------------------------
 
-OUTPUT_PATH = r"C:\Users\ASR10\PyPr\nfl_python_local\111B\nfl_python\nfl_data_pipeline\NFLTV_ML_11_rebuilt.csv"
+OUTPUT_PATH = r"...\NFLTV_ML_11_rebuilt.csv"
 
 _YEAR_MAP = {2010 + i: i for i in range(16)}  # season → 0-based index
 
