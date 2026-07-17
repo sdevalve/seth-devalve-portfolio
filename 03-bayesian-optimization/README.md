@@ -35,7 +35,7 @@ simulated season, each row is a designated matchup, and each cell is that matchu
 To populate it you need per-matchup win probabilities. The natural first move is a
 frequentist classifier (an L2 logistic regression over engineered team-strength features,
 selected with a two-stage Lasso then iterative-L2 procedure). It predicts individual games
-reasonably well. But when you simulate 500 seasons from it and histogram the
+reasonably well. But when you simulate 100 seasons from it and histogram the
 season-win totals, the distribution comes out **too peaked**: every team clusters near
 8 to 9 wins. Real NFL history has fatter tails, with more 13-win and 3-win teams than
 independent per-game probabilities can produce.
@@ -71,7 +71,7 @@ solved with **PuLP + CBC**.
 
 - **Historical notebook** runs this per week for 2010 to 2024 and plots the mean contention
   curve with its spread: the empirical shape of a playoff race.
-- **Simulated notebook** runs it across all 500 Bayesian draws on an optimized schedule and
+- **Simulated notebook** runs it across all 100 Bayesian draws on an optimized schedule and
   overlays the result, isolating the schedule's causal effect on contention because the
   outcome distribution is held fixed by the U-matrix.
 

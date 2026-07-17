@@ -21,11 +21,13 @@ The following are **not** present in this repo:
 
 - Gurobi solver modules (25-file proprietary package)
 - Production viewership prediction models
-- Anonymized rules replace all real scheduling constraints
-- Team names and matchup data are real NFL data (publicly available)
+- The real scheduling constraints (anonymized rules stand in for them)
 
-Everything else - the async task infrastructure, the React UI, the SSE event
-bus, and the REST API - is real production-ready code.
+What **is** present, and real:
+
+- NFL team names and matchup data (publicly available)
+- The full async task infrastructure: the React UI, the SSE event bus, the
+  REST API, and the Celery/Redis pipeline, all production-ready code
 
 ---
 
@@ -140,7 +142,7 @@ so you can watch the replay at any speed.
 Each solution stores a `schedule_records_json` column: the full 18-week,
 32-team game assignment as a flat list of `{week, slot, home, away}` objects.
 The Schedule Viewer renders these into a color-coded grid using a `colorPolicy`
-that maps broadcast slots to CSS classes (e.g., SNF → green, MNF → yellow). This color policy can be updated in the application's settings and schedules can be rendored with any colorPolicy.
+that maps broadcast slots to CSS classes (e.g., SNF → green, MNF → yellow). This color policy can be updated in the application's settings and schedules can be rendered with any colorPolicy.
 
 ### Run Cancellation
 
